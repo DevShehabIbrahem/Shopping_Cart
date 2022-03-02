@@ -68,7 +68,7 @@ const App = () => {
       <div>
         <Navbar items={cart.total_items} />
         <Switch>
-          <Route exact path="/Shopping_Cart">
+          <Route exact path="/Shopping_Cart/">
             <Products products={products} handleAddToCard={handleAddToCard} />
           </Route>
           <Route exact path="/cart">
