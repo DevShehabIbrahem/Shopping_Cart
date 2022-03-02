@@ -60,7 +60,7 @@ const Checkout = ({ cart, onCapCheckout, refreshCart }) => {
 
         setCheckouttoken(token);
       } catch (error) {
-        history.push("/Shopping_Cart");
+        history.push("/Shopping_Cart/");
       }
     };
     tokenid();
