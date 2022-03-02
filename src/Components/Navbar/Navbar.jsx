@@ -8,11 +8,11 @@ import {
   Badge,
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = ({ items }) => {
   const classes = useStyles();
-
+  const location = useLocation();
   return (
     <AppBar position="fixed" className={classes.appBar} color="inherit">
       <Toolbar>
@@ -33,18 +33,20 @@ const Navbar = ({ items }) => {
         </Typography>
         <div className={classes.grow} />
 
-        <div className={classes.button}>
-          <IconButton
-            component={Link}
-            to="/cart"
-            aria-label="show cart item"
-            color="inherit"
-          >
-            <Badge badgeContent={items} color="secondary">
-              <ShoppingCart />
-            </Badge>
-          </IconButton>
-        </div>
+        {location.pathname === "/Shopping_Cart/" && (
+          <div className={classes.button}>
+            <IconButton
+              component={Link}
+              to="/cart"
+              aria-label="show cart item"
+              color="inherit"
+            >
+              <Badge badgeContent={items} color="secondary">
+                <ShoppingCart />
+              </Badge>
+            </IconButton>
+          </div>
+        )}
       </Toolbar>
     </AppBar>
   );
