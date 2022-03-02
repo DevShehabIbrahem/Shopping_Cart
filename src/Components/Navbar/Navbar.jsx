@@ -19,7 +19,7 @@ const Navbar = ({ items }) => {
       <Toolbar>
         <Typography
           component={Link}
-          to="/"
+          to="/Shopping_Cart"
           variant="body2"
           className={classes.title}
           color="inherit"
@@ -33,7 +33,7 @@ const Navbar = ({ items }) => {
           ShoppingCart
         </Typography>
         <div className={classes.grow} />
-        {location.pathname === "/" && (
+        {location.pathname === "/Shopping_Cart" && (
           <div className={classes.button}>
             <IconButton
               component={Link}
